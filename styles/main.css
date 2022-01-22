@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  background: #fcffe0;
+  font-family: Helvetica;
+}
+
+header {
+  height: 100px;
+}
+
+header .title {
+  text-align: center;
+  padding: 1rem 0 0;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 2px solid #3d3d3d;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 5px;
+  position: relative;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  background: #f6f7e8;
+  border: 2px solid #5a5a5a;
+}
+/*# sourceMappingURL=main.css.map */
