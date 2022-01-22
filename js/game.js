@@ -81,7 +81,6 @@ function disableCards () {
     let randomPos = Math.floor(Math.random() * cardsLength)
     card.style.order = randomPos.toString()
   })
-  console.log('deck shuffled')
 })()
 
 cards.forEach(card => card.addEventListener("click", flipCard))
