@@ -1,26 +1,58 @@
-$main-color: hsla(99, 100%, 73%, 1);
-$light-green: hsla(99, 100%, 85%, 1);
-$background-color: hsla(66, 100%, 94%, 1);
-$secondary-color: hsla(66, 50%, 94%, 1);
-$text-color: hsla(0, 0%, 16%, 1);
-$light-black: hsla(0, 0%, 25%, 1);
+@import "./variables";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  border: none;
 }
 
 body {
   height: 100vh;
   overflow-x: hidden;
-  background: $background-color;
+  background: $text-color;
+  color: #fff;
   font-family: Helvetica, sans-serif;
 }
 
 .game-header {
+  display: flex;
+  justify-content: center;
 
+  .container {
+    width: 50%;
+    // outline: rgb(201, 85, 85) 2px solid;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+  }
+
+  .title {
+    align-self: center;
+  }
+  
+  #greetings {
+    margin-bottom: 1rem;
+  }
+
+  .back {
+    position: absolute;
+    left: 0;
+    a {
+      color: $main-color;
+      text-decoration: none;
+    }
+  }
+
+  #moves {
+    font-weight: 800;
+    background: $light-green;
+    color: $light-black;
+    padding: .2rem .5rem;
+    border-radius: .2rem;
+  }
 }
 
 .error {
@@ -90,7 +122,7 @@ main {
   cursor: pointer;
   font-size: 1rem;
   letter-spacing: 2px;
-  background: transparent;
+  background: #fff;
   box-shadow: 2px 6px 4px rgba(0, 0, 0, .06);
   transition: transform 50ms ease-out, color 200ms, border-color 200ms;
 
@@ -145,7 +177,28 @@ main {
   height: 100%;
   object-fit: cover;
   position: absolute;
-  background: $secondary-color;
+  background: $light-black;
   border: 2px solid rgb(90, 90, 90);
   backface-visibility: hidden;
+}
+
+@media (min-width: 320px) and (max-width: 720px) {
+  .memory-game {
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .memory-card {
+    flex: 1 0 100px;
+    margin: 0;
+    gap: 16px;
+  }
+  
+  .front-face, .back-face {
+    width: 75px;
+    height: auto;
+    backface-visibility: hidden;
+  }
 }

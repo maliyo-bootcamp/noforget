@@ -5,7 +5,7 @@ let firstCard, secondCard
 let numberOfMoves = 10
 const cards = document.querySelectorAll('.memory-card'),
   greetText = document.querySelector("#greetings")
-  movesLeftText = document.getElementById("remainingMoves")
+  movesLeftText = document.getElementById("moves")
   
 
 
@@ -17,17 +17,17 @@ function greetPlayer () {
   }
   greetText.textContent = `Welcome ${playerName}`
 }
-greetPlayer()
+ greetPlayer()  
 
 function updateMoves (moves) {
-  const text = `You have ${moves} moves left` 
+  const text = `${moves}` 
   movesLeftText.textContent = text
 }
-
 updateMoves(numberOfMoves)
 
+
 function flipCard () {
-  if (numberOfMoves === 0) {
+  if (numberOfMoves < 1) {
     location.replace("/gameover.html")
   }
   if (lockBoard) return
@@ -64,8 +64,6 @@ function unflipCards() {
 
 function checkForMatch () {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework
-  // console.log(firstCard.dataset.framework)
-  // console.log(secondCard.dataset.framework)
   isMatch ? disableCards() : unflipCards()
 }
 
@@ -82,5 +80,6 @@ function disableCards () {
     card.style.order = randomPos.toString()
   })
 })()
+
 
 cards.forEach(card => card.addEventListener("click", flipCard))
