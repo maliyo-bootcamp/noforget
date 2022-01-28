@@ -93,6 +93,9 @@ main {
 .home-container {
   margin-top: 2rem;
   position: relative;
+  display: flex;
+  align-items: center;
+  height: 80%;
 }
 
 .input-group {
